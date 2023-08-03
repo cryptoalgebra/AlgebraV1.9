@@ -1,18 +1,19 @@
 {
-  "name": "@cryptoalgebra/farmings",
+  "name": "@cryptoalgebra/v1.9-farmings",
   "description": "Liquidity mining contracts for Algebra protocol",
   "license": "GPL-3.0-or-later",
-  "version": "2.1.0",
+  "version": "1.0.1",
   "keywords": [
     "algebra",
     "liquidity mining"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cryptoalgebra/Algebra"
+    "url": "https://github.com/cryptoalgebra/AlgebraV1.9"
   },
   "files": [
-    "contracts",
+    "contracts/interfaces",
+    "contracts/libraries",
     "!contracts/test",
     "artifacts/contracts/**/*.json",
     "!artifacts/contracts/**/*.dbg.json",
@@ -22,8 +23,8 @@
   "dependencies": {
     "@openzeppelin/contracts": "3.4.1-solc-0.7-2",
     "@uniswap/v2-core": "^1.0.1",
-    "@cryptoalgebra/core": "^2.0.0",
-    "@cryptoalgebra/periphery": "^1.0.0"
+    "@cryptoalgebra/v1.9-core": "^1.0.0",
+    "@cryptoalgebra/v1.9-periphery": "^1.0.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.170",

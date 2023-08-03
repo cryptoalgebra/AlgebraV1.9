@@ -2,7 +2,7 @@
 pragma solidity >=0.7.5;
 pragma abicoder v2;
 
-import '@cryptoalgebra/core/contracts/interfaces/callback/IAlgebraSwapCallback.sol';
+import '@cryptoalgebra/v1.9-core/contracts/interfaces/callback/IAlgebraSwapCallback.sol';
 
 /// @title Router token swapping functionality
 /// @notice Functions for swapping tokens via Algebra
@@ -70,7 +70,7 @@ interface ISwapRouter is IAlgebraSwapCallback {
     /// @dev Unlike standard swaps, handles transferring from user before the actual swap.
     /// @param params The parameters necessary for the multi-hop swap, encoded as `ExactInputParams` in calldata
     /// @return amountOut The amount of the received token
-    function exactInputSingleSupportingFeeOnTransferTokens(ExactInputSingleParams calldata params)
-        external
-        returns (uint256 amountOut);
+    function exactInputSingleSupportingFeeOnTransferTokens(
+        ExactInputSingleParams calldata params
+    ) external returns (uint256 amountOut);
 }

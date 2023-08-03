@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity =0.7.6;
 
-import '@cryptoalgebra/periphery/contracts/libraries/TransferHelper.sol';
+import '@cryptoalgebra/v1.9-periphery/contracts/libraries/TransferHelper.sol';
 import './interfaces/IFarmingCenterVault.sol';
 
 contract FarmingCenterVault is IFarmingCenterVault {

@@ -4,8 +4,8 @@ pragma abicoder v2;
 
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 import '@openzeppelin/contracts/token/ERC20/SafeERC20.sol';
-import '@cryptoalgebra/core/contracts/libraries/FullMath.sol';
-import '@cryptoalgebra/periphery/contracts/interfaces/ISwapRouter.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/FullMath.sol';
+import '@cryptoalgebra/v1.9-periphery/contracts/interfaces/ISwapRouter.sol';
 
 contract AlgebraVault {
     using SafeERC20 for IERC20;
@@ -39,11 +39,7 @@ contract AlgebraVault {
         _;
     }
 
-    constructor(
-        address _ALGB,
-        address _stakingAddress,
-        ISwapRouter _AlgebraRouter
-    ) {
+    constructor(address _ALGB, address _stakingAddress, ISwapRouter _AlgebraRouter) {
         owner = msg.sender;
         ALGB = _ALGB;
         stakingAddress = _stakingAddress;
@@ -118,11 +114,7 @@ contract AlgebraVault {
         stakingAddress = _staking;
     }
 
-    function sweepTokens(
-        IERC20 token,
-        uint256 amount,
-        address _to
-    ) external onlyOwner {
+    function sweepTokens(IERC20 token, uint256 amount, address _to) external onlyOwner {
         require(_to != address(0));
         token.transfer(_to, amount);
     }

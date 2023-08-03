@@ -4,12 +4,12 @@ pragma abicoder v2;
 import './interfaces/IFarmingCenter.sol';
 import './interfaces/IFarmingCenterVault.sol';
 
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPool.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IERC20Minimal.sol';
+import '@cryptoalgebra/v1.9-core/contracts/interfaces/IAlgebraPool.sol';
+import '@cryptoalgebra/v1.9-core/contracts/interfaces/IERC20Minimal.sol';
 
-import '@cryptoalgebra/periphery/contracts/interfaces/INonfungiblePositionManager.sol';
-import '@cryptoalgebra/periphery/contracts/base/Multicall.sol';
-import '@cryptoalgebra/periphery/contracts/base/ERC721Permit.sol';
+import '@cryptoalgebra/v1.9-periphery/contracts/interfaces/INonfungiblePositionManager.sol';
+import '@cryptoalgebra/v1.9-periphery/contracts/base/Multicall.sol';
+import '@cryptoalgebra/v1.9-periphery/contracts/base/ERC721Permit.sol';
 
 import './base/PeripheryPayments.sol';
 import './libraries/IncentiveId.sol';

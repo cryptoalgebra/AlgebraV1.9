@@ -8,16 +8,16 @@ import {
   NonfungibleTokenPositionDescriptor,
   TestERC20,
   IAlgebraFactory,
-} from '@cryptoalgebra/periphery/typechain'
+} from '@cryptoalgebra/v1.9-periphery/typechain'
 
 import {
   abi as NFTD_ABI,
   bytecode as NFTD_BYTECODE,
-} from '@cryptoalgebra/periphery/artifacts/contracts/NonfungibleTokenPositionDescriptor.sol/NonfungibleTokenPositionDescriptor.json'
+} from '@cryptoalgebra/v1.9-periphery/artifacts/contracts/NonfungibleTokenPositionDescriptor.sol/NonfungibleTokenPositionDescriptor.json'
 import {
   abi as NFT_ABI,
   bytecode as NFT_BYTECODE,
-} from '@cryptoalgebra/periphery/artifacts/contracts/NonfungiblePositionManager.sol/NonfungiblePositionManager.json'
+} from '@cryptoalgebra/v1.9-periphery/artifacts/contracts/NonfungiblePositionManager.sol/NonfungiblePositionManager.json'
 type Fixture<T> = () => Promise<T>;
 
 const completeFixture: Fixture<{

@@ -9,17 +9,17 @@ import '../libraries/IncentiveId.sol';
 import '../libraries/NFTPositionInfo.sol';
 import '../libraries/LiquidityTier.sol';
 
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPoolDeployer.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPool.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IERC20Minimal.sol';
-import '@cryptoalgebra/core/contracts/libraries/SafeCast.sol';
-import '@cryptoalgebra/core/contracts/libraries/TickMath.sol';
-import '@cryptoalgebra/core/contracts/libraries/Constants.sol';
-import '@cryptoalgebra/core/contracts/libraries/LowGasSafeMath.sol';
-import '@cryptoalgebra/core/contracts/libraries/FullMath.sol';
+import '@cryptoalgebra/v1.9-core/contracts/interfaces/IAlgebraPoolDeployer.sol';
+import '@cryptoalgebra/v1.9-core/contracts/interfaces/IAlgebraPool.sol';
+import '@cryptoalgebra/v1.9-core/contracts/interfaces/IERC20Minimal.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/SafeCast.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/TickMath.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/Constants.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/LowGasSafeMath.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/FullMath.sol';
 
-import '@cryptoalgebra/periphery/contracts/interfaces/INonfungiblePositionManager.sol';
-import '@cryptoalgebra/periphery/contracts/libraries/TransferHelper.sol';
+import '@cryptoalgebra/v1.9-periphery/contracts/interfaces/INonfungiblePositionManager.sol';
+import '@cryptoalgebra/v1.9-periphery/contracts/libraries/TransferHelper.sol';
 
 /// @title Abstract base contract for Algebra farmings
 abstract contract AlgebraFarming is IAlgebraFarming {

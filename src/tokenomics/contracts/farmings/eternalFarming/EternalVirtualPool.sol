@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity =0.7.6;
 
-import '@cryptoalgebra/core/contracts/libraries/TickManager.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/TickManager.sol';
 
-import '@cryptoalgebra/core/contracts/libraries/FullMath.sol';
-import '@cryptoalgebra/core/contracts/libraries/Constants.sol';
-import '@cryptoalgebra/core/contracts/libraries/LowGasSafeMath.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/FullMath.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/Constants.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/LowGasSafeMath.sol';
 
 import './interfaces/IAlgebraEternalVirtualPool.sol';
 

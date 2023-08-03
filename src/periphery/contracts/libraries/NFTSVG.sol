@@ -2,7 +2,7 @@
 pragma solidity >=0.7.6;
 
 import '@openzeppelin/contracts/utils/Strings.sol';
-import '@cryptoalgebra/core/contracts/libraries/TickTable.sol';
+import '@cryptoalgebra/v1.9-core/contracts/libraries/TickTable.sol';
 import 'base64-sol/base64.sol';
 
 /// @title NFTSVG
@@ -192,11 +192,10 @@ library NFTSVG {
         );
     }
 
-    function generateSVGCardMantle(string memory quoteTokenSymbol, string memory baseTokenSymbol)
-        private
-        pure
-        returns (string memory svg)
-    {
+    function generateSVGCardMantle(
+        string memory quoteTokenSymbol,
+        string memory baseTokenSymbol
+    ) private pure returns (string memory svg) {
         svg = string(
             abi.encodePacked(
                 '<g mask="url(#fade-symbol)"><rect fill="none" x="0px" y="0px" width="290px" height="200px" /> <text y="70px" x="32px" fill="white" font-family="\'Courier New\', monospace" font-weight="200" font-size="36px">',
@@ -240,11 +239,7 @@ library NFTSVG {
         );
     }
 
-    function getCurve(
-        int24 tickLower,
-        int24 tickUpper,
-        int24 tickSpacing
-    ) internal pure returns (string memory curve) {
+    function getCurve(int24 tickLower, int24 tickUpper, int24 tickSpacing) internal pure returns (string memory curve) {
         int24 tickRange = (tickUpper - tickLower) / tickSpacing;
         if (tickRange <= 4) {
             curve = curve1;
