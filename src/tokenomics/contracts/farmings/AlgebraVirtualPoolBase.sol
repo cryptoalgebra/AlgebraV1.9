@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity =0.7.6;
 
-import '@cryptoalgebra/core/contracts/libraries/TickManager.sol';
-import '@cryptoalgebra/core/contracts/libraries/TickTable.sol';
-import '@cryptoalgebra/core/contracts/libraries/LiquidityMath.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/TickManager.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/TickTable.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/LiquidityMath.sol';
 
 import './IAlgebraVirtualPoolBase.sol';
 
@@ -43,23 +43,17 @@ abstract contract AlgebraVirtualPoolBase is IAlgebraVirtualPoolBase {
         _;
     }
 
-    constructor(
-        address _farmingCenterAddress,
-        address _farmingAddress,
-        address _pool
-    ) {
+    constructor(address _farmingCenterAddress, address _farmingAddress, address _pool) {
         farmingCenterAddress = _farmingCenterAddress;
         farmingAddress = _farmingAddress;
         pool = _pool;
     }
 
     /// @notice get seconds per liquidity inside range
-    function getInnerSecondsPerLiquidity(int24 bottomTick, int24 topTick)
-        external
-        view
-        override
-        returns (uint160 innerSecondsSpentPerLiquidity)
-    {
+    function getInnerSecondsPerLiquidity(
+        int24 bottomTick,
+        int24 topTick
+    ) external view override returns (uint160 innerSecondsSpentPerLiquidity) {
         uint160 lowerSecondsPerLiquidity = ticks[bottomTick].outerSecondsPerLiquidity;
         uint160 upperSecondsPerLiquidity = ticks[topTick].outerSecondsPerLiquidity;
 

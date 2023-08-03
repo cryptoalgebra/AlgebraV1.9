@@ -9,14 +9,14 @@ import '../libraries/IncentiveId.sol';
 import '../libraries/NFTPositionInfo.sol';
 import '../libraries/LiquidityTier.sol';
 
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPoolDeployer.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPool.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IERC20Minimal.sol';
-import '@cryptoalgebra/core/contracts/libraries/SafeCast.sol';
-import '@cryptoalgebra/core/contracts/libraries/TickMath.sol';
-import '@cryptoalgebra/core/contracts/libraries/Constants.sol';
-import '@cryptoalgebra/core/contracts/libraries/LowGasSafeMath.sol';
-import '@cryptoalgebra/core/contracts/libraries/FullMath.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/interfaces/IAlgebraPoolDeployer.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/interfaces/IAlgebraPool.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/interfaces/IERC20Minimal.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/SafeCast.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/TickMath.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/Constants.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/LowGasSafeMath.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/FullMath.sol';
 
 import '@cryptoalgebra/periphery/contracts/interfaces/INonfungiblePositionManager.sol';
 import '@cryptoalgebra/periphery/contracts/libraries/TransferHelper.sol';
@@ -153,14 +153,7 @@ abstract contract AlgebraFarming is IAlgebraFarming {
         uint24 minimalPositionWidth,
         address multiplierToken,
         Tiers calldata tiers
-    )
-        internal
-        returns (
-            bytes32 incentiveId,
-            uint256 receivedReward,
-            uint256 receivedBonusReward
-        )
-    {
+    ) internal returns (bytes32 incentiveId, uint256 receivedReward, uint256 receivedBonusReward) {
         _connectPoolToVirtualPool(key.pool, virtualPool);
 
         incentiveId = IncentiveId.compute(key);
@@ -235,16 +228,7 @@ abstract contract AlgebraFarming is IAlgebraFarming {
         IncentiveKey memory key,
         uint256 tokenId,
         uint256 tokensLocked
-    )
-        internal
-        returns (
-            bytes32 incentiveId,
-            int24 tickLower,
-            int24 tickUpper,
-            uint128 liquidity,
-            address virtualPool
-        )
-    {
+    ) internal returns (bytes32 incentiveId, int24 tickLower, int24 tickUpper, uint128 liquidity, address virtualPool) {
         incentiveId = IncentiveId.compute(key);
         Incentive storage incentive = incentives[incentiveId];
 

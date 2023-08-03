@@ -2,9 +2,9 @@
 pragma solidity =0.7.6;
 
 import '@cryptoalgebra/periphery/contracts/interfaces/INonfungiblePositionManager.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraFactory.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPool.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPoolDeployer.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/interfaces/IAlgebraFactory.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/interfaces/IAlgebraPool.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/interfaces/IAlgebraPoolDeployer.sol';
 import '@cryptoalgebra/periphery/contracts/libraries/PoolAddress.sol';
 
 /// @notice Encapsulates the logic for getting info about a NFT token ID
@@ -20,16 +20,7 @@ library NFTPositionInfo {
         IAlgebraPoolDeployer deployer,
         INonfungiblePositionManager nonfungiblePositionManager,
         uint256 tokenId
-    )
-        internal
-        view
-        returns (
-            IAlgebraPool pool,
-            int24 tickLower,
-            int24 tickUpper,
-            uint128 liquidity
-        )
-    {
+    ) internal view returns (IAlgebraPool pool, int24 tickLower, int24 tickUpper, uint128 liquidity) {
         address token0;
         address token1;
         (, , token0, token1, tickLower, tickUpper, liquidity, , , , ) = nonfungiblePositionManager.positions(tokenId);

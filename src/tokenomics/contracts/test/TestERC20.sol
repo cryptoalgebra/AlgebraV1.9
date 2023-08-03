@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity =0.7.6;
 
-import '@cryptoalgebra/core/contracts/interfaces/IERC20Minimal.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/interfaces/IERC20Minimal.sol';
 
 contract TestERC20 is IERC20Minimal {
     mapping(address => uint256) public override balanceOf;
@@ -46,11 +46,7 @@ contract TestERC20 is IERC20Minimal {
         isDeflationary = true;
     }
 
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint256 amount
-    ) external override returns (bool) {
+    function transferFrom(address sender, address recipient, uint256 amount) external override returns (bool) {
         uint256 allowanceBefore = allowance[sender][msg.sender];
         require(allowanceBefore >= amount, 'allowance insufficient');
 

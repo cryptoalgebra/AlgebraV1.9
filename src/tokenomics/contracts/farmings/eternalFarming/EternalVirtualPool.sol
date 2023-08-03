@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity =0.7.6;
 
-import '@cryptoalgebra/core/contracts/libraries/TickManager.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/TickManager.sol';
 
-import '@cryptoalgebra/core/contracts/libraries/FullMath.sol';
-import '@cryptoalgebra/core/contracts/libraries/Constants.sol';
-import '@cryptoalgebra/core/contracts/libraries/LowGasSafeMath.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/FullMath.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/Constants.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/LowGasSafeMath.sol';
 
 import './interfaces/IAlgebraEternalVirtualPool.sol';
 
@@ -45,12 +45,10 @@ contract EternalVirtualPool is AlgebraVirtualPoolBase, IAlgebraEternalVirtualPoo
     }
 
     // @inheritdoc IAlgebraEternalVirtualPool
-    function getInnerRewardsGrowth(int24 bottomTick, int24 topTick)
-        external
-        view
-        override
-        returns (uint256 rewardGrowthInside0, uint256 rewardGrowthInside1)
-    {
+    function getInnerRewardsGrowth(
+        int24 bottomTick,
+        int24 topTick
+    ) external view override returns (uint256 rewardGrowthInside0, uint256 rewardGrowthInside1) {
         return ticks.getInnerFeeGrowth(bottomTick, topTick, globalTick, totalRewardGrowth0, totalRewardGrowth1);
     }
 

@@ -1,9 +1,9 @@
 import { constants, Wallet } from 'ethers'
 import { ethers } from 'hardhat'
 
-import AlgebraPool from '@cryptoalgebra/core/artifacts/contracts/AlgebraPool.sol/AlgebraPool.json'
-import AlgebraFactoryJson from '@cryptoalgebra/core/artifacts/contracts/AlgebraFactory.sol/AlgebraFactory.json'
-import AlgebraPoolDeployerJson from '@cryptoalgebra/core/artifacts/contracts/AlgebraPoolDeployer.sol/AlgebraPoolDeployer.json'
+import AlgebraPool from '@cryptoalgebra/v1.9-directional-fee-core/artifacts/contracts/AlgebraPool.sol/AlgebraPool.json'
+import AlgebraFactoryJson from '@cryptoalgebra/v1.9-directional-fee-core/artifacts/contracts/AlgebraFactory.sol/AlgebraFactory.json'
+import AlgebraPoolDeployerJson from '@cryptoalgebra/v1.9-directional-fee-core/artifacts/contracts/AlgebraPoolDeployer.sol/AlgebraPoolDeployer.json'
 import NFTDescriptorJson from '@cryptoalgebra/periphery/artifacts/contracts/libraries/NFTDescriptor.sol/NFTDescriptor.json'
 import NonfungiblePositionManagerJson from '@cryptoalgebra/periphery/artifacts/contracts/NonfungiblePositionManager.sol/NonfungiblePositionManager.json'
 import NonfungibleTokenPositionDescriptor from '@cryptoalgebra/periphery/artifacts/contracts/NonfungibleTokenPositionDescriptor.sol/NonfungibleTokenPositionDescriptor.json'

@@ -8,7 +8,7 @@ import '../../libraries/IncentiveId.sol';
 import '../../libraries/RewardMath.sol';
 
 import './LimitVirtualPool.sol';
-import '@cryptoalgebra/core/contracts/libraries/SafeCast.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/SafeCast.sol';
 import '@cryptoalgebra/periphery/contracts/libraries/TransferHelper.sol';
 
 import '../AlgebraFarming.sol';
@@ -183,11 +183,7 @@ contract AlgebraLimitFarming is AlgebraFarming, IAlgebraLimitFarming {
     }
 
     /// @inheritdoc IAlgebraFarming
-    function exitFarming(
-        IncentiveKey memory key,
-        uint256 tokenId,
-        address _owner
-    ) external override onlyFarmingCenter {
+    function exitFarming(IncentiveKey memory key, uint256 tokenId, address _owner) external override onlyFarmingCenter {
         bytes32 incentiveId = IncentiveId.compute(key);
         Incentive storage incentive = incentives[incentiveId];
         // anyone can call exitFarming if the block time is after the end time of the incentive
@@ -273,12 +269,10 @@ contract AlgebraLimitFarming is AlgebraFarming, IAlgebraLimitFarming {
     }
 
     /// @inheritdoc IAlgebraFarming
-    function getRewardInfo(IncentiveKey memory key, uint256 tokenId)
-        external
-        view
-        override
-        returns (uint256 reward, uint256 bonusReward)
-    {
+    function getRewardInfo(
+        IncentiveKey memory key,
+        uint256 tokenId
+    ) external view override returns (uint256 reward, uint256 bonusReward) {
         bytes32 incentiveId = IncentiveId.compute(key);
 
         Farm memory farm = farms[tokenId][incentiveId];

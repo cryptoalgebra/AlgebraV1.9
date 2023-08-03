@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0 <0.8.0;
 
-import '@cryptoalgebra/core/contracts/libraries/FullMath.sol';
-import '@cryptoalgebra/core/contracts/libraries/TickMath.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPool.sol';
-import '@cryptoalgebra/core/contracts/libraries/LowGasSafeMath.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/FullMath.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/TickMath.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/interfaces/IAlgebraPool.sol';
+import '@cryptoalgebra/v1.9-directional-fee-core/contracts/libraries/LowGasSafeMath.sol';
 import '../libraries/PoolAddress.sol';
 
 /// @title DataStorage library
