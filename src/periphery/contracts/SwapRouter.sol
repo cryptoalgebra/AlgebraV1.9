@@ -2,9 +2,9 @@
 pragma solidity =0.7.6;
 pragma abicoder v2;
 
-import '@cryptoalgebra/core/contracts/libraries/SafeCast.sol';
-import '@cryptoalgebra/core/contracts/libraries/TickMath.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPool.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/libraries/SafeCast.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/libraries/TickMath.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/interfaces/IAlgebraPool.sol';
 
 import './interfaces/ISwapRouter.sol';
 import './base/PeripheryImmutableState.sol';
@@ -56,11 +56,7 @@ contract SwapRouter is
     }
 
     /// @inheritdoc IAlgebraSwapCallback
-    function algebraSwapCallback(
-        int256 amount0Delta,
-        int256 amount1Delta,
-        bytes calldata _data
-    ) external override {
+    function algebraSwapCallback(int256 amount0Delta, int256 amount1Delta, bytes calldata _data) external override {
         require(amount0Delta > 0 || amount1Delta > 0); // swaps entirely within 0-liquidity regions are not supported
         SwapCallbackData memory data = abi.decode(_data, (SwapCallbackData));
         (address tokenIn, address tokenOut) = data.path.decodeFirstPool();
@@ -111,13 +107,9 @@ contract SwapRouter is
     }
 
     /// @inheritdoc ISwapRouter
-    function exactInputSingle(ExactInputSingleParams calldata params)
-        external
-        payable
-        override
-        checkDeadline(params.deadline)
-        returns (uint256 amountOut)
-    {
+    function exactInputSingle(
+        ExactInputSingleParams calldata params
+    ) external payable override checkDeadline(params.deadline) returns (uint256 amountOut) {
         amountOut = exactInputInternal(
             params.amountIn,
             params.recipient,
@@ -128,13 +120,9 @@ contract SwapRouter is
     }
 
     /// @inheritdoc ISwapRouter
-    function exactInput(ExactInputParams memory params)
-        external
-        payable
-        override
-        checkDeadline(params.deadline)
-        returns (uint256 amountOut)
-    {
+    function exactInput(
+        ExactInputParams memory params
+    ) external payable override checkDeadline(params.deadline) returns (uint256 amountOut) {
         address payer = msg.sender; // msg.sender pays for the first hop
 
         while (true) {
@@ -165,12 +153,9 @@ contract SwapRouter is
     }
 
     /// @inheritdoc ISwapRouter
-    function exactInputSingleSupportingFeeOnTransferTokens(ExactInputSingleParams calldata params)
-        external
-        override
-        checkDeadline(params.deadline)
-        returns (uint256 amountOut)
-    {
+    function exactInputSingleSupportingFeeOnTransferTokens(
+        ExactInputSingleParams calldata params
+    ) external override checkDeadline(params.deadline) returns (uint256 amountOut) {
         SwapCallbackData memory data = SwapCallbackData({
             path: abi.encodePacked(params.tokenIn, params.tokenOut),
             payer: msg.sender
@@ -228,13 +213,9 @@ contract SwapRouter is
     }
 
     /// @inheritdoc ISwapRouter
-    function exactOutputSingle(ExactOutputSingleParams calldata params)
-        external
-        payable
-        override
-        checkDeadline(params.deadline)
-        returns (uint256 amountIn)
-    {
+    function exactOutputSingle(
+        ExactOutputSingleParams calldata params
+    ) external payable override checkDeadline(params.deadline) returns (uint256 amountIn) {
         // avoid an SLOAD by using the swap return data
         amountIn = exactOutputInternal(
             params.amountOut,
@@ -248,13 +229,9 @@ contract SwapRouter is
     }
 
     /// @inheritdoc ISwapRouter
-    function exactOutput(ExactOutputParams calldata params)
-        external
-        payable
-        override
-        checkDeadline(params.deadline)
-        returns (uint256 amountIn)
-    {
+    function exactOutput(
+        ExactOutputParams calldata params
+    ) external payable override checkDeadline(params.deadline) returns (uint256 amountIn) {
         // it's okay that the payer is fixed to msg.sender here, as they're only paying for the "final" exact output
         // swap, which happens first, and subsequent swaps are paid for within nested callback frames
         exactOutputInternal(

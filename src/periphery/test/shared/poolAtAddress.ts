@@ -1,4 +1,4 @@
-import { abi as POOL_ABI } from '@cryptoalgebra/core/artifacts/contracts/AlgebraPool.sol/AlgebraPool.json'
+import { abi as POOL_ABI } from '@cryptoalgebra/v1.9-ve-core/artifacts/contracts/AlgebraPool.sol/AlgebraPool.json'
 import { Contract, Wallet } from 'ethers'
 import { IAlgebraPool } from '../../typechain'
 

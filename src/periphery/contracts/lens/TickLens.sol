@@ -2,7 +2,7 @@
 pragma solidity >=0.5.0;
 pragma abicoder v2;
 
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPool.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/interfaces/IAlgebraPool.sol';
 
 import '../interfaces/ITickLens.sol';
 
@@ -11,12 +11,10 @@ import '../interfaces/ITickLens.sol';
 /// https://github.com/Uniswap/v3-periphery
 contract TickLens is ITickLens {
     /// @inheritdoc ITickLens
-    function getPopulatedTicksInWord(address pool, int16 tickTableIndex)
-        public
-        view
-        override
-        returns (PopulatedTick[] memory populatedTicks)
-    {
+    function getPopulatedTicksInWord(
+        address pool,
+        int16 tickTableIndex
+    ) public view override returns (PopulatedTick[] memory populatedTicks) {
         // fetch bitmap
         uint256 bitmap = IAlgebraPool(pool).tickTable(tickTableIndex);
 

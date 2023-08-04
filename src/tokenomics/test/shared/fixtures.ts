@@ -1,16 +1,16 @@
 import { constants, Wallet } from 'ethers'
 import { ethers } from 'hardhat'
 
-import AlgebraPool from '@cryptoalgebra/core/artifacts/contracts/AlgebraPool.sol/AlgebraPool.json'
-import AlgebraFactoryJson from '@cryptoalgebra/core/artifacts/contracts/AlgebraFactory.sol/AlgebraFactory.json'
-import AlgebraPoolDeployerJson from '@cryptoalgebra/core/artifacts/contracts/AlgebraPoolDeployer.sol/AlgebraPoolDeployer.json'
-import NFTDescriptorJson from '@cryptoalgebra/periphery/artifacts/contracts/libraries/NFTDescriptor.sol/NFTDescriptor.json'
-import NonfungiblePositionManagerJson from '@cryptoalgebra/periphery/artifacts/contracts/NonfungiblePositionManager.sol/NonfungiblePositionManager.json'
-import NonfungibleTokenPositionDescriptor from '@cryptoalgebra/periphery/artifacts/contracts/NonfungibleTokenPositionDescriptor.sol/NonfungibleTokenPositionDescriptor.json'
-import SwapRouter from '@cryptoalgebra/periphery/artifacts/contracts/SwapRouter.sol/SwapRouter.json'
+import AlgebraPool from '@cryptoalgebra/v1.9-ve-core/artifacts/contracts/AlgebraPool.sol/AlgebraPool.json'
+import AlgebraFactoryJson from '@cryptoalgebra/v1.9-ve-core/artifacts/contracts/AlgebraFactory.sol/AlgebraFactory.json'
+import AlgebraPoolDeployerJson from '@cryptoalgebra/v1.9-ve-core/artifacts/contracts/AlgebraPoolDeployer.sol/AlgebraPoolDeployer.json'
+import NFTDescriptorJson from '@cryptoalgebra/v1.9-ve-periphery/artifacts/contracts/libraries/NFTDescriptor.sol/NFTDescriptor.json'
+import NonfungiblePositionManagerJson from '@cryptoalgebra/v1.9-ve-periphery/artifacts/contracts/NonfungiblePositionManager.sol/NonfungiblePositionManager.json'
+import NonfungibleTokenPositionDescriptor from '@cryptoalgebra/v1.9-ve-periphery/artifacts/contracts/NonfungibleTokenPositionDescriptor.sol/NonfungibleTokenPositionDescriptor.json'
+import SwapRouter from '@cryptoalgebra/v1.9-ve-periphery/artifacts/contracts/SwapRouter.sol/SwapRouter.json'
 import WNativeToken from './external/WNativeToken.json'
 import { linkLibraries } from './linkLibraries'
-import { ISwapRouter,IWNativeToken,NFTDescriptor } from '@cryptoalgebra/periphery/typechain'
+import { ISwapRouter,IWNativeToken,NFTDescriptor } from '@cryptoalgebra/v1.9-ve-periphery/typechain'
 import {
   AlgebraLimitFarming,
   AlgebraEternalFarming,

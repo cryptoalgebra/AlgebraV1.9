@@ -1,17 +1,17 @@
 {
-  "name": "@cryptoalgebra/core",
+  "name": "@cryptoalgebra/v1.9-ve-core",
   "description": "Core smart contracts of Algebra",
   "license": "GPL-2.0-or-later",
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.0.0",
+  "version": "1.0.0",
   "keywords": [
     "algebra"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cryptoalgebra/Algebra/"
+    "url": "https://github.com/cryptoalgebra/AlgebraV1.9"
   },
   "files": [
     "contracts/interfaces",

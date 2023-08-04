@@ -8,8 +8,8 @@ import '../../libraries/IncentiveId.sol';
 import '../../libraries/RewardMath.sol';
 
 import './LimitVirtualPool.sol';
-import '@cryptoalgebra/core/contracts/libraries/SafeCast.sol';
-import '@cryptoalgebra/periphery/contracts/libraries/TransferHelper.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/libraries/SafeCast.sol';
+import '@cryptoalgebra/v1.9-ve-periphery/contracts/libraries/TransferHelper.sol';
 
 import '../AlgebraFarming.sol';
 

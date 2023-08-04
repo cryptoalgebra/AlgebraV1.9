@@ -2,9 +2,9 @@
 pragma solidity =0.7.6;
 pragma abicoder v2;
 
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraFactory.sol';
-import '@cryptoalgebra/core/contracts/interfaces/callback/IAlgebraMintCallback.sol';
-import '@cryptoalgebra/core/contracts/libraries/TickMath.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/interfaces/IAlgebraFactory.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/interfaces/callback/IAlgebraMintCallback.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/libraries/TickMath.sol';
 
 import '../libraries/PoolAddress.sol';
 import '../libraries/CallbackValidation.sol';
@@ -24,11 +24,7 @@ abstract contract LiquidityManagement is IAlgebraMintCallback, PeripheryImmutabl
     }
 
     /// @inheritdoc IAlgebraMintCallback
-    function algebraMintCallback(
-        uint256 amount0Owed,
-        uint256 amount1Owed,
-        bytes calldata data
-    ) external override {
+    function algebraMintCallback(uint256 amount0Owed, uint256 amount1Owed, bytes calldata data) external override {
         MintCallbackData memory decoded = abi.decode(data, (MintCallbackData));
         CallbackValidation.verifyCallback(poolDeployer, decoded.poolKey);
 
@@ -49,15 +45,11 @@ abstract contract LiquidityManagement is IAlgebraMintCallback, PeripheryImmutabl
     }
 
     /// @notice Add liquidity to an initialized pool
-    function addLiquidity(AddLiquidityParams memory params)
+    function addLiquidity(
+        AddLiquidityParams memory params
+    )
         internal
-        returns (
-            uint128 liquidity,
-            uint256 actualLiquidity,
-            uint256 amount0,
-            uint256 amount1,
-            IAlgebraPool pool
-        )
+        returns (uint128 liquidity, uint256 actualLiquidity, uint256 amount0, uint256 amount1, IAlgebraPool pool)
     {
         PoolAddress.PoolKey memory poolKey = PoolAddress.PoolKey({token0: params.token0, token1: params.token1});
 

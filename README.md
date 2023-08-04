@@ -3,20 +3,45 @@
 </p>
 
 <p align="center">
-Innovative DEX with concentrated liquidity, adaptive fee, built-in farming etc.
+Innovative DEX with concentrated liquidity, adaptive fee, build-in farming etc.
 </p>
  
  <p align="center">
- <a href="https://github.com/cryptoalgebra/Algebra/actions/workflows/tests.yml"><img alt="Tests status" src="https://github.com/cryptoalgebra/Algebra/actions/workflows/tests.yml/badge.svg"></a>
-  <a href="https://github.com/cryptoalgebra/Algebra/actions/workflows/echidna.yml"><img alt="Echidna status" src="https://github.com/cryptoalgebra/Algebra/actions/workflows/echidna.yml/badge.svg"></a>
+ <a href="https://github.com/cryptoalgebra/AlgebraV1.9/actions/workflows/tests.yml"><img alt="Tests status" src="https://github.com/cryptoalgebra/AlgebraV1.9/actions/workflows/tests.yml/badge.svg"></a>
+  <a href="https://github.com/cryptoalgebra/AlgebraV1.9/actions/workflows/echidna.yml"><img alt="Echidna status" src="https://github.com/cryptoalgebra/AlgebraV1.9/actions/workflows/echidna.yml/badge.svg"></a>
 </p>
 
-
+- [Docs](#Docs)
+- [Versions](#Versions)
+- [Packages](#Packages)
 - [Build](#Build)
 - [Tests](#Tests)
 - [Coverage](#Tests-coverage)
 - [Deploy](#Deploy)
 
+## Docs
+
+The current short documentation page is located at: <a href="https://docs.algebra.finance/en/docs/contracts/API-reference-v1.9/introduction">API reference</a>
+
+We are currently in the process of creating a more complete and comprehensive version of the documentation.
+
+## Versions
+
+Please note that different DEX-partners of our protocol may use different versions of the protocol. 
+
+This repository contains smart contracts that belong to the version 1.9 of the protocol with an increased community fee limit.
+
+A page describing the versions used by partners can be found in the documentation: [partners page](https://docs.algebra.finance/en/docs/contracts/partners/introduction)
+
+## Packages 
+
+Full packages:
+
+[@cryptoalgebra/v1.9-ve-core v1.0.0](https://www.npmjs.com/package/@cryptoalgebra/v1.9-ve-core/v/1.0.0)
+
+[@cryptoalgebra/v1.9-ve-periphery v1.0.1](https://www.npmjs.com/package/@cryptoalgebra/v1.9-ve-periphery/v/1.0.1)
+
+[@cryptoalgebra/v1.9-ve-farmings v1.0.1](https://www.npmjs.com/package/@cryptoalgebra/v1.9-ve-farmings/v/1.0.1)
 
 ## Build
 

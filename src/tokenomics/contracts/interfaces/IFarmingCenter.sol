@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: MIT
-pragma solidity =0.7.6;
+pragma solidity >=0.7.5;
 pragma abicoder v2;
 
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraPool.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IAlgebraVirtualPool.sol';
-import '@cryptoalgebra/core/contracts/interfaces/IERC20Minimal.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/interfaces/IAlgebraPool.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/interfaces/IAlgebraVirtualPool.sol';
+import '@cryptoalgebra/v1.9-ve-core/contracts/interfaces/IERC20Minimal.sol';
 
-import '@cryptoalgebra/periphery/contracts/interfaces/IMulticall.sol';
-import '@cryptoalgebra/periphery/contracts/interfaces/INonfungiblePositionManager.sol';
+import '@cryptoalgebra/v1.9-ve-periphery/contracts/interfaces/IMulticall.sol';
+import '@cryptoalgebra/v1.9-ve-periphery/contracts/interfaces/INonfungiblePositionManager.sol';
 
-import '@cryptoalgebra/periphery/contracts/interfaces/IPeripheryPayments.sol';
+import '@cryptoalgebra/v1.9-ve-periphery/contracts/interfaces/IPeripheryPayments.sol';
 
 import '@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol';
 

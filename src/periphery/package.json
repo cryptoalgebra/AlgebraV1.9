@@ -1,18 +1,18 @@
 {
-  "name": "@cryptoalgebra/periphery",
+  "name": "@cryptoalgebra/v1.9-ve-periphery",
   "description": "Peripheral smart contracts of Algebra protocol",
   "license": "GPL-2.0-or-later",
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "algebra",
     "periphery"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cryptoalgebra/Algebra"
+    "url": "https://github.com/cryptoalgebra/AlgebraV1.9"
   },
   "files": [
     "contracts/base",
@@ -26,7 +26,7 @@
   "dependencies": {
     "@openzeppelin/contracts": "3.4.1-solc-0.7-2",
     "@uniswap/v2-core": "1.0.1",
-    "@cryptoalgebra/core": "^2.0.0",
+    "@cryptoalgebra/v1.9-ve-core": "^1.0.0",
     "base64-sol": "1.0.1"
   },
   "devDependencies": {
