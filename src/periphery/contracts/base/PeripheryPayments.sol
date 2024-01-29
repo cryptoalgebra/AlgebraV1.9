@@ -18,7 +18,7 @@ abstract contract PeripheryPayments is IPeripheryPayments, PeripheryImmutableSta
     }
 
     /// @inheritdoc IPeripheryPayments
-    function unwrapWNativeToken(uint256 amountMinimum, address recipient) external payable override {
+    function unwrapWNativeToken(uint256 amountMinimum, address recipient) public payable override {
         uint256 balanceWNativeToken = IWNativeToken(WNativeToken).balanceOf(address(this));
         require(balanceWNativeToken >= amountMinimum, 'Insufficient WNativeToken');
 
@@ -29,11 +29,7 @@ abstract contract PeripheryPayments is IPeripheryPayments, PeripheryImmutableSta
     }
 
     /// @inheritdoc IPeripheryPayments
-    function sweepToken(
-        address token,
-        uint256 amountMinimum,
-        address recipient
-    ) external payable override {
+    function sweepToken(address token, uint256 amountMinimum, address recipient) public payable override {
         uint256 balanceToken = IERC20(token).balanceOf(address(this));
         require(balanceToken >= amountMinimum, 'Insufficient token');
 
@@ -51,12 +47,7 @@ abstract contract PeripheryPayments is IPeripheryPayments, PeripheryImmutableSta
     /// @param payer The entity that must pay
     /// @param recipient The entity that will receive payment
     /// @param value The amount to pay
-    function pay(
-        address token,
-        address payer,
-        address recipient,
-        uint256 value
-    ) internal {
+    function pay(address token, address payer, address recipient, uint256 value) internal {
         if (token == WNativeToken && address(this).balance >= value) {
             // pay with WNativeToken
             IWNativeToken(WNativeToken).deposit{value: value}(); // wrap only what is needed to pay
